@@ -18,41 +18,41 @@ export class BargraphComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.authService.userId;
     this.budgetService.getChartData(this.userId)
-    .subscribe((res:any) =>{
-      let title= res.map(res=>res.title);
-      let budget= res.map(res=>res.budget);
-      let amount= res.map(res=>res.amount);
-      console.log("bargraph",title);
-      console.log("bargraph1",budget);
-      console.log("bargraph2",amount);
-      this.chart = new Chart('canvas',{
-        type:'line',
+    .subscribe((res: any) => {
+      const title = res.map(res => res.title);
+      const budget = res.map(res => res.budget);
+      const amount = res.map(res => res.amount);
+      console.log('bargraph', title);
+      console.log('bargraph1', budget);
+      console.log('bargraph2', amount);
+      this.chart = new Chart('canvas', {
+        type: 'line',
         data: {
-          labels:title,
-          datasets:[
-            {data:budget,
+          labels: title,
+          datasets: [
+            {data:  budget,
             borderColor: '#0099ff',
-            fill:false
+            fill: false
             },
 
             {
-              data:amount,
+              data: amount,
             borderColor: '#339933',
-            fill:false
+            fill: false
             }
           ]
         },
-        options:{
-          legend:{
-            display:false
+        options: {
+          legend: {
+            display: false
           },
-          scales:{
-            xAxes:[{display: true}],
-            yAxes:[{display:true}]
+          scales: {
+            xAxes: [{display: true}],
+            yAxes: [{display: true}]
           }
         }
-      })
-    })
+      });
+    } );
   }
 
 }
