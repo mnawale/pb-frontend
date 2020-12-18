@@ -21,6 +21,10 @@
     <input matInput formControlName="value" type="number" />
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-label>Month</mat-label>
+    <input matInput formControlName="month" type="month"/>
+  </mat-form-field>
 
   <mat-form-field>
     <mat-label>Tags</mat-label>
@@ -31,8 +35,8 @@
     <input matInput formControlName="amount" />
   </mat-form-field>
   <button
-    color="primary"
-
+    color="accent"
+    [disabled]="!form.valid"
     mat-raised-button
     type="submit"
   >
