@@ -1,0 +1,60 @@
+
+<nav>
+  <ul>
+    <span>
+
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/PieChart"
+    >
+     Pie Chart
+    </a>
+    </li>
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/barchart"
+    >
+     Bar Graph
+    </a>
+    </li>
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/linegraph"
+    >
+     Line Chart
+    </a>
+    </li>
+    </span>
+    <span>
+
+
+    <li>
+    <a
+
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/PieChart"
+    >
+      Pie Chart
+    </a>
+      </li>
+      
+
+    <li>
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/linegraph"
+    >
+      <span>Line Graph</span>
+    </a>
+    </li>
+    </span>
+  </ul>
+</nav>

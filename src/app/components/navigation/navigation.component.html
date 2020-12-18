@@ -1,0 +1,63 @@
+
+<nav>
+  <ul>
+    <span>
+    <li>
+    <a routerLink="/">
+      Home
+    </a>
+    </li>
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/budgets"
+    >
+      My Budget
+    </a>
+    </li>
+    </span>
+    <span>
+
+    <li class="left">
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/createbudget"
+    >
+      Budget Setting
+    </a>
+    </li>
+    <li>
+    <a
+
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Login</span>
+    </a>
+      </li>
+      <li>
+    <a
+      *ngIf="isAuthenticated"
+      (click)="logout()"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Logout</span>
+    </a>
+    </li>
+    <li>
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/signup"
+    >
+      <span>Register</span>
+    </a>
+    </li>
+    </span>
+  </ul>
+</nav>
+
