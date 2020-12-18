@@ -13,10 +13,10 @@ import { ErrorHandlerService } from './error-handler.service';
   providedIn: 'root',
 })
 export class BudgetService {
-  //private url = 'http://localhost:3000/budget';
+  // private url = 'http://localhost:3000/budget';
  // private endpoint = 'http://localhost:3000/budget/getBudget';
-   private url = 'pb/budget';
-  private endpoint = 'pb/budget/getBudget';
+   private url = '/pb/budget';
+  private endpoint = '/pb/budget/getBudget';
 
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -35,7 +35,7 @@ export class BudgetService {
       );
   }
   fetchBudgetUser(userId) {
-    console.log("myid",userId);
+    console.log('myid', userId);
     return this.http
       .get<UserBudget[]>(`${this.endpoint}/${userId}`, { responseType: 'json' })
       .pipe(
@@ -44,9 +44,9 @@ export class BudgetService {
 
   }
 
-  getChartData(userId){
-    //console.log("chart id",userId);
-      return this.http.get(`${this.endpoint}/${userId}`,{ responseType: 'json' })
+  getChartData(userId) {
+    // console.log("chart id",userId);
+      return this.http.get(`${this.endpoint}/${userId}`, { responseType: 'json' });
 
   }
 
@@ -60,7 +60,7 @@ export class BudgetService {
       .post<UserBudget>(
         this.url,
         { userId, title: formData.title, value: formData.value,
-          month: formData.month, tags: formData.tags,amount: formData.amount },
+          month: formData.month, tags: formData.tags, amount: formData.amount },
         this.httpOptions
       )
       .pipe(
