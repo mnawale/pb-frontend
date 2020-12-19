@@ -15,8 +15,8 @@ import { ErrorHandlerService } from './error-handler.service';
 export class BudgetService {
   // private url = 'http://localhost:3000/budget';
  // private endpoint = 'http://localhost:3000/budget/getBudget';
-   private url = '/pb/budget';
-  private endpoint = '/pb/budget/getBudget';
+   url = '/pb/budget';
+  endpoint = '/pb/budget/getBudget';
 
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

@@ -7,10 +7,17 @@ describe('workspace-project App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-
+/*
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('posts app is running!');
+    browser.pause();
+    expect(page.getTitleText()).toEqual('Personal Budget app is running!');
+  });
+  */
+  it('should display welcome message', () => {
+    page.navigateTo();
+    browser.pause();
+    expect(page.getParagraphText()).toEqual('Personal Budget');
   });
 
   afterEach(async () => {
